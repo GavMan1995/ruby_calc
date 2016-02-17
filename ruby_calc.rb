@@ -47,7 +47,12 @@ end
 def second
   puts Second_number
   @second_num = gets.strip.to_f
-  calculator
+    if @operator_in == "/" && @second_num == 0
+      puts "you cant divide by 0 choose new second number"
+      second
+    else
+    calculator
+  end
 end
 
 def continue
