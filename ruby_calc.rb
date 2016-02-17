@@ -3,7 +3,22 @@ Calc_intro = "----Welcome to the Ruby Calculator----\nWhat is the first number"
 Which_operator = 'which operator would you like to use? (+ - * /)'
 Second_number = "What is the second number you would like to use?"
 @operator_array = ["+", "-", "*", "/"]
+def calc_answer
+  case @operator_in 
+    when "+"
+      @answer = @first_num + @second_num
+    when "-"
+      @answer = @first_num - @second_num
+    when "*"    
+      @answer = @first_num * @second_num
+    when "/"
+      @answer = @first_num / @second_num  
+    else
+      puts "Try Again"
+  end  
+end
 
+      
 #========MAIN PAGE===========
 def main_page
     puts Calc_intro
@@ -14,7 +29,7 @@ end
 #========WHICH OPERATOR==========
 def operator
   puts Which_operator
-  @operator_in = gets.strip.to_sym
+  @operator_in = gets.strip
   if_operator(@operator_in)
 end
 
@@ -35,9 +50,9 @@ def second
 end
 
 def calculator
-
-  puts "Calculating..."
-  puts "the results of #{@first_num} #{@operator_in} #{@second_num} is"
+  puts "Calculating..." 
+  calc_answer
+  puts "the result of #{@first_num} #{@operator_in} #{@second_num} is #{@answer}"
 end
 
 main_page
