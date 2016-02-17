@@ -50,11 +50,25 @@ def second
   calculator
 end
 
+def continue
+  puts "1. Continue\n2. Exit"
+  continue_var = gets.strip.to_i
+  case continue_var
+  when 1
+    print"choose again "
+    operator
+  when 2
+    puts "thankyou come again"
+  end
+end
+
 #============prints out calculator answer===============
 def calculator
   puts "Calculating..."
   calc_answer
   puts "the result of #{@first_num} #{@operator_in} #{@second_num} is #{@answer}"
+  @first_num = @answer
+  continue
 end
 
 main_page
