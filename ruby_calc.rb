@@ -55,6 +55,7 @@ def second
   end
 end
 
+#========Continue calculation with answer as @first_num===================
 def continue
   puts "1. Continue\n2. Exit"
   continue_var = gets.strip.to_i
