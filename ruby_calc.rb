@@ -57,14 +57,16 @@ end
 
 #========Continue calculation with answer as @first_num===================
 def continue
-  puts "1. Continue\n2. Exit"
+  puts "1. Continue\n2. Reset Calculator\n3. Exit"
   continue_var = gets.strip.to_i
   case continue_var
   when 1
     print"choose again "
     operator
   when 2
-    puts "thankyou come again"
+    main_page
+  when 3 
+    puts "Thank you, come again"
   end
 end
 
