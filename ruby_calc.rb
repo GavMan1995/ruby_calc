@@ -1,5 +1,5 @@
 #variables
-Calc_intro = "----Welcome to the Ruby Calculator----\nWhat is the first number"
+Calc_intro = "----Welcome to the Ruby Calculator----\n-format x + y-"
 Which_operator = 'which operator would you like to use? (+ - * /)'
 Second_number = "What is the second number you would like to use?"
 @operator_array = ["+", "-", "*", "/"]
@@ -8,13 +8,13 @@ Second_number = "What is the second number you would like to use?"
 def calc_answer
   case @operator_in
     when "+"
-      @answer = @first_num + @second_num
+      @answer = @first_num.to_f + @second_num.to_f
     when "-"
-      @answer = @first_num - @second_num
+      @answer = @first_num.to_f - @second_num.to_f
     when "*"
-      @answer = @first_num * @second_num
+      @answer = @first_num.to_f * @second_num.to_f
     when "/"
-      @answer = @first_num / @second_num
+      @answer = @first_num.to_f / @second_num.to_f
     else
       puts "Try Again"
   end
@@ -23,8 +23,12 @@ end
 #========MAIN PAGE===========
 def main_page
     puts Calc_intro
-    @first_num = gets.strip.to_f
-    operator
+    input = gets.chomp
+    values = input.split(" ")
+      @first_num = values[0]
+      @operator_in = values[1]
+      @second_num = values[2]
+    calculator
 end
 
 #========WHICH OPERATOR==========
