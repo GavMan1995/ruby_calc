@@ -1,7 +1,4 @@
 #variables and array
-Calc_intro = "----Welcome to the Ruby Calculator----\n-enter equation, Please use spaces"
-Which_operator = 'which operator would you like to use? (+ - * /)'
-Second_number = "What is the second number you would like to use?"
 @operator_array = ["+", "-", "*", "/"]
 
 #==========Calculator Answer Function==============
@@ -25,7 +22,7 @@ end
 
 #========MAIN PAGE===========
 def main_page
-    puts Calc_intro
+    puts "enter equation, use spaces"
     input = gets.chomp
     values = input.split(" ")
       @first_num = values[0]
@@ -36,9 +33,9 @@ end
 
 #========WHICH OPERATOR==========
 def operator
-  puts Which_operator
-  @operator_in = gets.strip
-  if_operator(@operator_in)
+  puts "choose operater - + / *"
+  operator_in = gets.strip
+  if_operator(operator_in)
 end
 
 #if statement that checks if the user input includes what there is in the string
@@ -66,7 +63,7 @@ end
 #========Continue calculation with answer as @first_num===================
 def continue
   puts "1. Continue\n2. Reset Calculator\n3. Exit"
-  continue_var = gets.strip.to_f
+  continue_var = gets.strip.to_i
   case continue_var
   when 1
     print"choose again "

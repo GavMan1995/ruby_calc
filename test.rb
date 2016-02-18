@@ -1,27 +1,24 @@
-puts "Enter your equation"
-puts "-format x + y-"
-input = gets.chomp
-values = input.split(" ")
+@math = []
 
-@num1 = values[0]
-@operator = values[1]
-@num2 = values[2]
+def main_page
+  puts "type equation, include spaces"
+  equation = gets.strip
+  @math << equation
+  split_equation
+end
 
-def calc_answer
-  case @operator
-    when "+"
-      @answer = @num1.to_i + @num2.to_i
-    when "-"
-      @answer = @num1.to_i - @num2.to_i
-    when "*"
-      @answer = @num1.to_i * @num2.to_i
-    when "/"
-      @answer = @num1.to_i / @num2.to_i
-    else
-      puts "Try Again"
-  end
-end 
+def split_equation
+  values = @math.split(" ")
+    @first_num = values[0]
+    @operator_in = values[1]
+    @second_num = values[2]
+    hi
+end
 
-calc_answer
-	puts @answer
- 
+def hi
+  print @first_num.to_i
+  print @operator_in.to_sym
+  print @second_num.to_i
+end
+
+main_page
