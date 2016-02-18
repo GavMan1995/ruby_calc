@@ -1,4 +1,4 @@
-#variables
+#variables and array
 Calc_intro = "----Welcome to the Ruby Calculator----\n-enter equation, Please use spaces"
 Which_operator = 'which operator would you like to use? (+ - * /)'
 Second_number = "What is the second number you would like to use?"
@@ -19,8 +19,6 @@ def calc_answer
         @answer = @first_num.to_f * @second_num.to_f
       when "/"
         @answer = @first_num.to_f / @second_num.to_f
-      else
-        puts "Try Again"
     end
   end
 end
@@ -43,6 +41,7 @@ def operator
   if_operator(@operator_in)
 end
 
+#if statement that checks if the user input includes what there is in the string
 def if_operator(operator_input)
   if @operator_array.include? operator_input
     second
@@ -67,7 +66,7 @@ end
 #========Continue calculation with answer as @first_num===================
 def continue
   puts "1. Continue\n2. Reset Calculator\n3. Exit"
-  continue_var = gets.strip.to_i
+  continue_var = gets.strip.to_f
   case continue_var
   when 1
     print"choose again "
