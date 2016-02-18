@@ -1,22 +1,27 @@
 #variables
-Calc_intro = "----Welcome to the Ruby Calculator----\n-format x + y-"
+Calc_intro = "----Welcome to the Ruby Calculator----\n-enter equation, Please use spaces"
 Which_operator = 'which operator would you like to use? (+ - * /)'
 Second_number = "What is the second number you would like to use?"
 @operator_array = ["+", "-", "*", "/"]
 
 #==========Calculator Answer Function==============
 def calc_answer
-  case @operator_in
-    when "+"
-      @answer = @first_num.to_f + @second_num.to_f
-    when "-"
-      @answer = @first_num.to_f - @second_num.to_f
-    when "*"
-      @answer = @first_num.to_f * @second_num.to_f
-    when "/"
-      @answer = @first_num.to_f / @second_num.to_f
-    else
-      puts "Try Again"
+  if @operator_in == "/" && @second_num.to_i == 0
+    puts "you cant divide by 0!!"
+    main_page
+  else
+    case @operator_in
+      when "+"
+        @answer = @first_num.to_f + @second_num.to_f
+      when "-"
+        @answer = @first_num.to_f - @second_num.to_f
+      when "*"
+        @answer = @first_num.to_f * @second_num.to_f
+      when "/"
+        @answer = @first_num.to_f / @second_num.to_f
+      else
+        puts "Try Again"
+    end
   end
 end
 
@@ -69,7 +74,7 @@ def continue
     operator
   when 2
     main_page
-  when 3 
+  when 3
     puts "Thank you, come again"
   end
 end
